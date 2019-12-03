@@ -154,3 +154,31 @@ gru 03, 2019 11:38:01 PM com.calculator.LogGenerator addInfo
 INFO: Loaded plugins: Cube Power Root Square SquareRoot 
 gru 03, 2019 11:38:01 PM com.calculator.LogGenerator addInfo
 INFO: Computing operation 27 # 3 with result 3.0
+gru 03, 2019 11:49:01 PM com.calculator.LogGenerator addInfo
+INFO: Plugins Directory found
+gru 03, 2019 11:49:01 PM com.calculator.LogGenerator addInfo
+INFO: Loaded plugins: Cube Power Root Square SquareRoot 
+gru 03, 2019 11:49:01 PM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 # 3 with result 3.0
+gru 04, 2019 12:39:32 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 # 3 with result 3.0
+gru 04, 2019 12:39:49 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 + 3 with result 30.0
+gru 04, 2019 12:41:10 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 + 3 with result 30.0
+gru 04, 2019 12:41:21 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 + 3 with result 30.0
+gru 04, 2019 12:42:11 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 + 3 with result 30.0
+gru 04, 2019 12:45:28 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 + 3 with result 30.0
+gru 04, 2019 12:46:33 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 + 3 with result 30.0
+gru 04, 2019 12:46:49 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 + 3 with result 30.0
+gru 04, 2019 12:49:40 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 27 + 3 - 4 with result 26.0
+gru 04, 2019 12:52:00 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 2 * 7 with result 14.0
+gru 04, 2019 12:52:13 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 7 / 2 with result 3.5

@@ -1,10 +1,31 @@
 package com.calculator;
 
+import com.calculator.com.calculator.operatordata.AddOperatorDataBuilder;
+import com.calculator.com.calculator.operatordata.OperatorData;
+import com.calculator.com.calculator.operatordata.OperatorDataBuilder;
+import com.calculator.com.calculator.operatordata.OperatorDataDirector;
+
 public class Divide implements iPluginStructure {
+
+    OperatorDataDirector director;
+
+    OperatorDataBuilder divideOperatorDataBuilder;
 
     OperatorData opData;
 
-    Divide() { this.opData = new OperatorData('/', "divide", 2); }
+    Divide() {
+
+        this.director = new OperatorDataDirector();
+
+        divideOperatorDataBuilder = new AddOperatorDataBuilder();
+
+        this.director.setOperatorBuilder(divideOperatorDataBuilder);
+
+        this.director.constructOperatorData();
+
+        this.opData = this.director.getOperatorData();
+
+    }
 
     public char getSign() {
         return this.opData.sign();

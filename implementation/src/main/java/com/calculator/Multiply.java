@@ -1,10 +1,31 @@
 package com.calculator;
 
+import com.calculator.com.calculator.operatordata.AddOperatorDataBuilder;
+import com.calculator.com.calculator.operatordata.OperatorData;
+import com.calculator.com.calculator.operatordata.OperatorDataBuilder;
+import com.calculator.com.calculator.operatordata.OperatorDataDirector;
+
 public class Multiply implements iPluginStructure {
+
+    OperatorDataDirector director;
+
+    OperatorDataBuilder multiplyOperatorDataBuilder;
 
     OperatorData opData;
 
-    Multiply() { this.opData = new OperatorData('*', "multiply", 2); }
+    Multiply() {
+
+        this.director = new OperatorDataDirector();
+
+        multiplyOperatorDataBuilder = new AddOperatorDataBuilder();
+
+        this.director.setOperatorBuilder(multiplyOperatorDataBuilder);
+
+        this.director.constructOperatorData();
+
+        this.opData = this.director.getOperatorData();
+
+    }
 
     public char getSign() {
         return this.opData.sign();

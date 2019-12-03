@@ -1,11 +1,32 @@
 package com.calculator;
 
 
+import com.calculator.com.calculator.operatordata.AddOperatorDataBuilder;
+import com.calculator.com.calculator.operatordata.OperatorData;
+import com.calculator.com.calculator.operatordata.OperatorDataBuilder;
+import com.calculator.com.calculator.operatordata.OperatorDataDirector;
+
 public class Add implements iPluginStructure {
 
-    OperatorData  opData;
+    OperatorDataDirector director;
 
-    Add() { this.opData = new OperatorData('+', "add", 1); }
+    OperatorDataBuilder addOperatorDataBuilder;
+
+    OperatorData opData;
+
+    Add() {
+
+        this.director = new OperatorDataDirector();
+
+        addOperatorDataBuilder = new AddOperatorDataBuilder();
+
+        this.director.setOperatorBuilder(addOperatorDataBuilder);
+
+        this.director.constructOperatorData();
+
+        this.opData = this.director.getOperatorData();
+
+    }
 
     public char getSign() {
         return this.opData.sign();
