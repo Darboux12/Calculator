@@ -129,7 +129,7 @@ public class Calculate {
 
         Stack<Character> ops = new Stack<Character>();
 
-        for(String expr : expression.split("")){
+        for(String expr : expression.split("\\s+")){
 
             if (isNumeric(expr))
                 values.push(Double.parseDouble(expr));
