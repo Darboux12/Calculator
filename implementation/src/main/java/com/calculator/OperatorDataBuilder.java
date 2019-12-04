@@ -1,4 +1,4 @@
-package com.calculator.com.calculator.operatordata;
+package com.calculator;
 
 public abstract class OperatorDataBuilder {
 

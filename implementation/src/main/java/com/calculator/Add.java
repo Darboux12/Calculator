@@ -1,11 +1,6 @@
 package com.calculator;
 
 
-import com.calculator.com.calculator.operatordata.AddOperatorDataBuilder;
-import com.calculator.com.calculator.operatordata.OperatorData;
-import com.calculator.com.calculator.operatordata.OperatorDataBuilder;
-import com.calculator.com.calculator.operatordata.OperatorDataDirector;
-
 public class Add implements iPluginStructure {
 
     OperatorDataDirector director;

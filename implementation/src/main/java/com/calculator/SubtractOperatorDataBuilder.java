@@ -1,15 +1,15 @@
-package com.calculator.com.calculator.operatordata;
+package com.calculator;
 
-public class AddOperatorDataBuilder extends OperatorDataBuilder{
+public class SubtractOperatorDataBuilder extends OperatorDataBuilder {
 
     @Override
     public void buildSign() {
-        opData.setSign('+');
+        opData.setSign('-');
     }
 
     @Override
     public void buildName() {
-        opData.setName("add");
+        opData.setName("subtract");
     }
 
     @Override

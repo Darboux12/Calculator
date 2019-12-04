@@ -6,9 +6,9 @@ public class Main {
 
         Calculate c = new Calculate();
 
-     //   c.loadPlugins();
+        c.loadPlugins();
 
-        System.out.println( c.evaluate("7 / 2"));
+        System.out.println( c.evaluate("(2+3) - 5 * (3 + 1)"));
 
     }
 }
