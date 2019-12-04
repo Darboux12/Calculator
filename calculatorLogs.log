@@ -46,3 +46,17 @@ gru 04, 2019 7:18:24 AM com.calculator.LogGenerator addInfo
 INFO: Loaded plugins: Cube Power Root Square SquareRoot 
 gru 04, 2019 7:18:35 AM com.calculator.LogGenerator addInfo
 INFO: Computing operation ( 1 + 7 ) - 2 with result 6.0
+gru 04, 2019 7:24:12 AM com.calculator.LogGenerator addInfo
+INFO: Application starts running
+gru 04, 2019 7:24:12 AM com.calculator.LogGenerator addInfo
+INFO: Plugins Directory found
+gru 04, 2019 7:24:12 AM com.calculator.LogGenerator addInfo
+INFO: Loaded plugins: Cube Power Root Square SquareRoot 
+gru 04, 2019 7:24:18 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 8 + 7 with result 15.0
+gru 04, 2019 7:24:25 AM com.calculator.LogGenerator addInfo
+INFO: Computing operation 3 ^ 3 with result 27.0
+gru 04, 2019 7:25:22 AM com.calculator.LogGenerator addInfo
+INFO: Plugins Directory found
+gru 04, 2019 7:25:22 AM com.calculator.LogGenerator addInfo
+INFO: Loaded plugins: Cube Power Root Square SquareRoot 

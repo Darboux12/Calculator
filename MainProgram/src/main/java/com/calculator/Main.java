@@ -10,10 +10,6 @@ public class Main {
 
       //  System.out.println( c.evaluate("2 ^ 5"));
 
-        LogGenerator logGenerator = new LogGenerator();
-
-        logGenerator.addInfo("Application starts running");
-
         Calculator c = new Calculator();
         
     }
