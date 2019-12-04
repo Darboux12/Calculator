@@ -5,16 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.calculator</groupId>
-    <artifactId>implementation</artifactId>
+    <artifactId>MainProgramn</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.calculator</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>Implementation</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.calculator</groupId>
+            <artifactId>GUI</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>
