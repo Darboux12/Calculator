@@ -15,6 +15,7 @@ public class Calculate {
     LogGenerator logGenerator = new LogGenerator();
 
     public Calculate() {
+        this.loadPlugins();
     }
 
     public void loadPlugins() {

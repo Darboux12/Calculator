@@ -20,6 +20,8 @@ public class Calculator {
 
     private static CalculatorButton b_equal,b_add,b_sub,b_div,b_mul,b_reset;
 
+    private static CalculatorButton b_power,b_root,b_square,b_squareroot,b_cube;
+
     private static CalculatorButton b_frac, b_left_bracket, b_right_bracket;
 
     private  static CalculatorPanel CalPanelInput;
@@ -57,6 +59,7 @@ public class Calculator {
         b_8 = new CalculatorButton("8");
         b_9 = new CalculatorButton("9");
 
+
         b_equal = new CalculatorButton("=");
         b_add = new CalculatorButton("+");
         b_sub = new CalculatorButton("-");
@@ -64,15 +67,22 @@ public class Calculator {
         b_mul = new CalculatorButton("*");
         b_reset = new CalculatorButton("C");
 
+
         b_frac = new CalculatorButton(".");
         b_left_bracket = new CalculatorButton("(");
         b_right_bracket = new CalculatorButton(")");
         b_exit = new CalculatorButton("Exit");
 
+        b_power = new CalculatorButton("^");
+        b_cube = new CalculatorButton("cube");
+        b_root = new CalculatorButton("root");
+        b_square = new CalculatorButton("square");
+        b_squareroot = new CalculatorButton("sqrt");
+
         CalListener = new ListenForButton();
 
         CalPanelInput = new CalculatorPanel();
-        CalPanelInput.setLayout(new GridLayout(4,5));
+        CalPanelInput.setLayout(new GridLayout(5,5));
 
         CalPanelText = new CalculatorPanel();
 
@@ -93,6 +103,12 @@ public class Calculator {
         b_div.addActionListener(CalListener);
         b_mul.addActionListener(CalListener);
         b_reset.addActionListener(CalListener);
+
+        b_power.addActionListener(CalListener);
+        b_cube.addActionListener(CalListener);
+        b_root.addActionListener(CalListener);
+        b_square.addActionListener(CalListener);
+        b_squareroot.addActionListener(CalListener);
 
         b_frac.addActionListener(CalListener);
         b_left_bracket.addActionListener(CalListener);
@@ -118,6 +134,13 @@ public class Calculator {
         CalPanelInput.add(b_frac);
         CalPanelInput.add(b_reset);
         CalPanelInput.add(b_equal);
+
+        CalPanelInput.add(b_squareroot);
+        CalPanelInput.add(b_root);
+        CalPanelInput.add(b_power);
+        CalPanelInput.add(b_square);
+        CalPanelInput.add(b_cube);
+
         CalPanelInput.add(b_exit);
 
         CalTextField.setSize(20,20);
@@ -233,6 +256,30 @@ public class Calculator {
                 CalTextField.setText(expr);
             }
 
+            if(e.getSource() == b_power){
+                expr += " ^ ";
+                CalTextField.setText(expr);
+            }
+
+            if(e.getSource() == b_root){
+                expr += " # ";
+                CalTextField.setText(expr);
+            }
+
+            if(e.getSource() == b_cube){
+                expr += " @ ";
+                CalTextField.setText(expr);
+            }
+
+            if(e.getSource() == b_square){
+                expr += " $ ";
+                CalTextField.setText(expr);
+            }
+
+            if(e.getSource() == b_squareroot){
+                expr += " & ";
+                CalTextField.setText(expr);
+            }
 
             if(e.getSource() == b_exit){
                 System.exit(0);

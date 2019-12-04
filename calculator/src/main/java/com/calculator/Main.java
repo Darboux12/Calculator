@@ -6,9 +6,9 @@ public class Main {
 
       //  Calculate c = new Calculate();
 
-      //  c.loadPlugins();
+     //   c.loadPlugins();
 
-        //System.out.println( c.evaluate("2.5 + 5"));
+      //  System.out.println( c.evaluate("2 ^ 5"));
 
         Calculator c = new Calculator();
 
