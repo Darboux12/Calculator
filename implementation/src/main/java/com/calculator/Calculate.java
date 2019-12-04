@@ -20,9 +20,9 @@ public class Calculate {
 
     public void loadPlugins() {
 
-        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\Filmy\\Again\\Radzionek\\plugins");
+        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\TO\\plugins");
 
-        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\Filmy\\Again\\Radzionek\\plugins\\com\\calculator");
+        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\TO\\plugins\\com\\calculator");
 
         String PluginNames = "Loaded plugins: ";
 
