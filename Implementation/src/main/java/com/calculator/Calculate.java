@@ -20,9 +20,9 @@ public class Calculate {
 
     public void loadPlugins() {
 
-        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\TO\\plugins");
+        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\Calculator\\plugins");
 
-        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\TO\\plugins\\com\\calculator");
+        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\Calculator\\plugins\\com\\calculator");
 
         String PluginNames = "Loaded plugins: ";
 
@@ -57,10 +57,13 @@ public class Calculate {
 
             } catch (MalformedURLException | ClassNotFoundException e) {
                 e.printStackTrace();
+                logGenerator.addWarning(e.toString());
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
+                logGenerator.addWarning(e.toString());
             } catch (InstantiationException e) {
                 e.printStackTrace();
+                logGenerator.addWarning(e.toString());
             }
 
             logGenerator.addInfo(PluginNamesBuilder.toString());
@@ -98,30 +101,38 @@ public class Calculate {
 
     private  double applyOp(char op, double b, double a) {
 
-        for (Operator opElement : OpList.list)
+        for (Operator opElement : OpList.list) {
             if (op == opElement.opSign) {
 
                 try {
 
-                    Method method = opElement.opFunction.getClass().getMethod("compute",                                                     double.class, double.class);
+                    Method method = opElement.opFunction.getClass().getMethod("compute", double.class, double.class);
 
                     Object o = method.invoke(opElement.opFunction.getClass().newInstance(), a, b);
 
                     return ((Number) o).doubleValue();
 
                 } catch (NoSuchMethodException e) {
+                    logGenerator.addInfo(e.getStackTrace().toString());
 
                 } catch (InstantiationException e) {
+                    logGenerator.addInfo(e.getStackTrace().toString());
 
                 } catch (IllegalAccessException e) {
+                    logGenerator.addInfo(e.getStackTrace().toString());
 
                 } catch (InvocationTargetException e) {
+                    logGenerator.addInfo(e.getStackTrace().toString());
 
                 }
 
             }
 
-        return 0;
+        }
+
+
+
+        return -1;
     }
 
     public  double evaluate(String expression) {
