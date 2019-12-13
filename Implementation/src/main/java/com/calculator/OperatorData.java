@@ -1,11 +1,12 @@
 package com.calculator;
 
 public class OperatorData {
+
     private char sign;
     private String name;
     private int precedence;
 
-    public OperatorData(){};
+    OperatorData(){};
 
     public OperatorData(char op, String name, int prec) {
         this.sign = op;

@@ -2,24 +2,19 @@ package com.calculator;
 
 public class Multiply implements iPluginStructure {
 
-    OperatorDataDirector director;
-
-    OperatorDataBuilder multiplyOperatorDataBuilder;
-
-    OperatorData opData;
+    private OperatorDataDirector director;
+    private OperatorData opData;
 
     Multiply() {
 
         this.director = new OperatorDataDirector();
-
-        multiplyOperatorDataBuilder = new AddOperatorDataBuilder();
-
-        this.director.setOperatorBuilder(multiplyOperatorDataBuilder);
-
+        this.setOperatorBuilder();
         this.director.constructOperatorData();
-
         this.opData = this.director.getOperatorData();
+    }
 
+    private void setOperatorBuilder(){
+        this.director.setOperatorBuilder(new MultiplyOperatorDataBuilder());
     }
 
     public char getSign() {

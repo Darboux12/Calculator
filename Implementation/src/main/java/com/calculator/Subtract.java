@@ -2,23 +2,19 @@ package com.calculator;
 
 public class Subtract implements iPluginStructure {
 
-    OperatorDataDirector director;
-
-    OperatorDataBuilder subtractOperatorDataBuilder;
-
-    OperatorData opData;
+    private OperatorDataDirector director;
+    private OperatorData opData;
 
     Subtract() {
 
         this.director = new OperatorDataDirector();
-
-        subtractOperatorDataBuilder = new AddOperatorDataBuilder();
-
-        this.director.setOperatorBuilder(subtractOperatorDataBuilder);
-
+        this.setOperatorBuilder();
         this.director.constructOperatorData();
-
         this.opData = this.director.getOperatorData();
+    }
+
+    private void setOperatorBuilder(){
+        this.director.setOperatorBuilder(new SubtractOperatorDataBuilder());
     }
 
     public char getSign() {

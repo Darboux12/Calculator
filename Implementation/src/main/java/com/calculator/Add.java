@@ -3,24 +3,19 @@ package com.calculator;
 
 public class Add implements iPluginStructure {
 
-    OperatorDataDirector director;
+    private OperatorDataDirector director;
+    private OperatorData opData;
 
-    OperatorDataBuilder addOperatorDataBuilder;
-
-    OperatorData opData;
-
-    Add() {
+    Add(){
 
         this.director = new OperatorDataDirector();
-
-        addOperatorDataBuilder = new AddOperatorDataBuilder();
-
-        this.director.setOperatorBuilder(addOperatorDataBuilder);
-
+        this.setOperatorBuilder();
         this.director.constructOperatorData();
-
         this.opData = this.director.getOperatorData();
+    }
 
+    private void setOperatorBuilder(){
+        this.director.setOperatorBuilder(new AddOperatorDataBuilder());
     }
 
     public char getSign() {

@@ -2,23 +2,19 @@ package com.calculator;
 
 public class Divide implements iPluginStructure {
 
-    OperatorDataDirector director;
-
-    OperatorDataBuilder divideOperatorDataBuilder;
-
-    OperatorData opData;
+    private OperatorDataDirector director;
+    private OperatorData opData;
 
     Divide() {
 
         this.director = new OperatorDataDirector();
-
-        divideOperatorDataBuilder = new AddOperatorDataBuilder();
-
-        this.director.setOperatorBuilder(divideOperatorDataBuilder);
-
+        this.setOperatorBuilder();
         this.director.constructOperatorData();
-
         this.opData = this.director.getOperatorData();
+    }
+
+    private void setOperatorBuilder(){
+        this.director.setOperatorBuilder(new DivideOperatorDataBuilder());
 
     }
 

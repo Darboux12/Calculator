@@ -1,6 +1,6 @@
 package com.calculator;
 
-public class MultiplyOperatorDataBuilder extends  OperatorDataBuilder {
+class MultiplyOperatorDataBuilder extends  OperatorDataBuilder {
 
     @Override
     public void buildSign() {

@@ -18,4 +18,6 @@ public class OperatorsList {
         this.list.add(new Operator(sign,name,prededence,obj));
     }
 
+
+
 }

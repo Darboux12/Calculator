@@ -10,5 +10,4 @@ public class CalculatorButton extends JButton {
         setPreferredSize(new Dimension(40,40));
     }
 
-
 }

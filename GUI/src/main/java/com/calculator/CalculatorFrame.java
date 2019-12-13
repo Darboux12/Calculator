@@ -2,9 +2,9 @@ package com.calculator;
 
 import javax.swing.*;
 
-public class CalculatorFrame extends JFrame{
+class CalculatorFrame extends JFrame{
 
-    public CalculatorFrame() {
+    CalculatorFrame() {
         super("Calculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);

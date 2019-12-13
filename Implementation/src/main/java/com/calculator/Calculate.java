@@ -14,6 +14,8 @@ public class Calculate {
 
     LogGenerator logGenerator = new LogGenerator();
 
+    int PluginsCounter;
+
     public Calculate() {
         this.loadPlugins();
     }
@@ -33,6 +35,8 @@ public class Calculate {
         if (PluginsPackage.exists()) {
 
                logGenerator.addInfo("Plugins Directory found");
+
+               this.PluginsCounter = PluginsDirectory.listFiles().length;
 
             try {
                 URL loadPath = PluginsPackage.toURI().toURL();
@@ -79,7 +83,7 @@ public class Calculate {
     private boolean isOperator(char op){
 
         for(Operator opElement : this.OpList.list)
-            if(op == opElement.opSign)
+            if(op == opElement.getOperatorSign())
                 return true;
 
         return false;
@@ -92,8 +96,8 @@ public class Calculate {
 
         for(Operator op1Element : this.OpList.list)
             for(Operator op2Element : this.OpList.list)
-                if(op1 == op1Element.opSign && op2 == op2Element.opSign)
-                    if(op1Element.opPrecedence > op2Element.opPrecedence)
+                if(op1 == op1Element.getOperatorSign() && op2 == op2Element.getOperatorSign())
+                    if(op1Element.getOperatorPrecedence() > op2Element.getOperatorPrecedence())
                         return false;
 
         return true;
@@ -102,13 +106,13 @@ public class Calculate {
     private  double applyOp(char op, double b, double a) {
 
         for (Operator opElement : OpList.list) {
-            if (op == opElement.opSign) {
+            if (op == opElement.getOperatorSign()) {
 
                 try {
 
-                    Method method = opElement.opFunction.getClass().getMethod("compute", double.class, double.class);
+                    Method method = opElement.getOperatorFunction().getClass().getMethod("compute", double.class, double.class);
 
-                    Object o = method.invoke(opElement.opFunction.getClass().newInstance(), a, b);
+                    Object o = method.invoke(opElement.getOperatorFunction().getClass().newInstance(), a, b);
 
                     return ((Number) o).doubleValue();
 
@@ -178,6 +182,14 @@ public class Calculate {
 
 
         return result;
+    }
+
+    public OperatorsList getOperatorList(){
+        return this.OpList;
+    }
+
+    public int getPluginsCounter(){
+        return this.PluginsCounter;
     }
 
 }
