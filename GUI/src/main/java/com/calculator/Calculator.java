@@ -23,6 +23,7 @@ class Calculator {
      private LogGenerator logGenerator;
      private StringWriter errors;
      private PrintWriter printErr;
+     private char lastOp = ' ';
 
      private String ErrorMessage = "Incorrect input expression";
 
@@ -150,7 +151,6 @@ class Calculator {
             }
 
             for (CalculatorButton btn : Buttons) {
-
                 if (e.getSource() == btn) {
 
                     if(btn.getText().equals(String.valueOf('='))){
@@ -169,24 +169,59 @@ class Calculator {
                     }
 
                     if(btn.getText().equals(String.valueOf('C'))){
+                        lastOp = ' ';
                         expr = "";
                         CalTextField.setText(expr);
                         break;
                     }
 
-                    if(Character.isDigit(btn.getText().charAt(0)) || btn.getText().equals(String.valueOf('-'))){
+                    if(Character.isDigit(btn.getText().charAt(0))){
+                        lastOp = btn.getText().charAt(0);
                         expr += btn.getText();
                         CalTextField.setText(expr);
                         break;
                     }
 
+                    if(btn.getButtonSign() == '-'){
+
+                        if(lastOp == '('){
+                            lastOp = btn.getButtonSign();
+                            expr += " " + btn.getButtonSign();
+                            CalTextField.setText(expr);
+                            break;
+                        }
+
+                        for(Operator op : cal.getOperatorList().list){
+
+                            if(lastOp == op.getOperatorSign() || lastOp == ' '){
+
+                                lastOp = btn.getButtonSign();
+
+                                if(expr.isEmpty()){
+                                    expr += btn.getButtonSign();
+                                    CalTextField.setText(expr);
+                                    break;
+                                }
+
+                                expr += " " + btn.getButtonSign();
+                                CalTextField.setText(expr);
+                                break;
+                            }
+
+                        }
+
+                        if(lastOp == '-')
+                            break;
+                    }
+
                     if(expr.isEmpty()){
+                        lastOp = btn.getButtonSign();
                         expr += btn.getButtonSign() + " ";
                         CalTextField.setText(expr);
                         break;
                     }
 
-
+                    lastOp = btn.getButtonSign();
                     expr += " " + btn.getButtonSign() + " ";
                     CalTextField.setText(expr);
                 }

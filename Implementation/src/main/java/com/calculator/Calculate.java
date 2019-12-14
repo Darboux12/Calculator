@@ -82,7 +82,7 @@ class Calculate {
         } else{logGenerator.sendNormalLog(Calculate.class.getName(),"Plugins Directory not found"); }
     }
 
-   private boolean isNumeric(String strNum) {
+    private boolean isNumeric(String strNum) {
        return strNum.matches("-?\\d+(\\.\\d+)?");
    }
 
@@ -189,8 +189,10 @@ class Calculate {
 
             try{
 
-                if(isOperator(ExpElements[i].charAt(0)) && isOperator(ExpElements[i+1].charAt(0)))
-                    throw new NeighbouringOperatorsExpectation();
+                if(!(isNumeric(ExpElements[i])) && !(isNumeric(ExpElements[i+1])) &&
+                        ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '('
+                )
+                             throw new NeighbouringOperatorsExpectation();
 
                 if(ExpElements[i].charAt(0) == ')' && ExpElements[i+1].charAt(0) == '(') {
                     throw new WrongBracketsInput();
