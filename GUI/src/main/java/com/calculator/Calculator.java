@@ -1,22 +1,35 @@
 package com.calculator;
 
+import com.expectations.InCorrectInputExpectation;
+import com.expectations.NeighbouringOperatorsExpectation;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
-public class Calculator {
+class Calculator {
 
-    private Calculate cal;
-    private String expr;
-    private CalculatorButton[] Buttons;
-    private CalculatorFrame CalFrame;
-    private JTextField CalTextField;
-    private CalculatorPanel CalPanelInput;
-    private CalculatorPanel CalPanelText;
-    private ListenForButton CalListener;
+     private Calculate cal;
+     private String expr;
+     private CalculatorButton[] Buttons;
+     private CalculatorFrame CalFrame;
+     private JTextField CalTextField;
+     private CalculatorPanel CalPanelInput;
+     private CalculatorPanel CalPanelText;
+     private ListenForButton CalListener;
+     private LogGenerator logGenerator;
+     private StringWriter errors;
+     private PrintWriter printErr;
 
-    Calculator() {
+     private String ErrorMessage = "Incorrect input expression";
+
+     Calculator() {
+
+         errors = new StringWriter();
+         printErr = new PrintWriter(errors);
 
         this.cal = new Calculate();
         this.expr = "";
@@ -32,6 +45,9 @@ public class Calculator {
         this.setButtons();
         this.setCalPanelText();
         this.setCalculatorFrame();
+
+        this.logGenerator = new LogGenerator("GUI","GUI");
+        this.logGenerator.sendNormalLog(Calculator.class.getName(),"Calculator GUI has been created");
     }
 
     private int getNumberOfButtons(){
@@ -70,7 +86,8 @@ public class Calculator {
         }
 
         for (Operator op : this.cal.getOperatorList().list) {
-            this.Buttons[i] = new CalculatorButton(String.valueOf(op.getOperatorSign()));
+            this.Buttons[i] = new CalculatorButton(String.valueOf(op.getOperatorName()) + " ( "
+                                                    + op.getOperatorSign() + " ) ",op.getOperatorSign());
             this.Buttons[i].addActionListener(CalListener);
             this.CalPanelInput.add(this.Buttons[i]);
             i++;
@@ -106,16 +123,53 @@ public class Calculator {
         this.CalFrame.pack();
     }
 
+    private boolean isInputExpressionCorrect(String expr){
+
+             try{
+
+                 if(!(this.cal.isExpressionCorrect(expr)))
+                     throw new InCorrectInputExpectation();
+             }
+
+             catch (InCorrectInputExpectation e){
+                 e.printStackTrace(printErr);
+                 logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
+                 return false;
+             }
+
+             return true;
+    }
+
     private class ListenForButton implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
 
+            if(expr.equals(ErrorMessage)){
+                expr = "";
+            }
+
             for (CalculatorButton btn : Buttons) {
+
                 if (e.getSource() == btn) {
 
                     if(btn.getText().equals(String.valueOf('='))){
-                        expr = cal.evaluate(expr) + " ";
+
+                        if(isInputExpressionCorrect(expr)){
+                            expr = cal.evaluate(expr) + " ";
+                            CalTextField.setText(expr);
+                            break;
+                        }
+
+                        else{
+                            expr = ErrorMessage;
+                            CalTextField.setText(expr);
+                            break;
+                        }
+                    }
+
+                    if(btn.getText().equals(String.valueOf('C'))){
+                        expr = "";
                         CalTextField.setText(expr);
                         break;
                     }
@@ -126,7 +180,14 @@ public class Calculator {
                         break;
                     }
 
-                    expr += " " + btn.getText() + " ";
+                    if(expr.isEmpty()){
+                        expr += btn.getButtonSign() + " ";
+                        CalTextField.setText(expr);
+                        break;
+                    }
+
+
+                    expr += " " + btn.getButtonSign() + " ";
                     CalTextField.setText(expr);
                 }
             }

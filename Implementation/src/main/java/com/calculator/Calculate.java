@@ -1,6 +1,11 @@
 package com.calculator;
 
+import com.expectations.NeighbouringOperatorsExpectation;
+import com.expectations.WrongBracketsInput;
+
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -8,19 +13,23 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.*;
 
-public class Calculate {
+class Calculate {
 
-    private OperatorsList OpList = new OperatorsList();
+    private OperatorsList OpList;
+    private LogGenerator logGenerator;
+    private int PluginsCounter;
 
-    LogGenerator logGenerator = new LogGenerator();
+    private StringWriter errors = new StringWriter();
+    private PrintWriter  printErr = new PrintWriter(errors);
 
-    int PluginsCounter;
+    Calculate() {
 
-    public Calculate() {
+        this.OpList = new OperatorsList();
+        this.logGenerator = new LogGenerator(Calculate.class.getName(),"Calculate");
         this.loadPlugins();
     }
 
-    public void loadPlugins() {
+    private void loadPlugins() {
 
         File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\Calculator\\plugins");
 
@@ -32,18 +41,21 @@ public class Calculate {
 
         Object PluginInstance;
 
+
+
         if (PluginsPackage.exists()) {
 
-               logGenerator.addInfo("Plugins Directory found");
+              logGenerator.sendNormalLog(Calculate.class.getName(),"Plugins Directory found");
 
-               this.PluginsCounter = PluginsDirectory.listFiles().length;
+              this.PluginsCounter = Objects.requireNonNull(PluginsDirectory.listFiles()).length;
 
-            try {
+              try {
+
                 URL loadPath = PluginsPackage.toURI().toURL();
                 URL[] classUrl = new URL[]{loadPath};
                 ClassLoader cl = new URLClassLoader(classUrl);
 
-                for (File PluginFile : PluginsDirectory.listFiles()) {
+                for (File PluginFile : Objects.requireNonNull(PluginsDirectory.listFiles())) {
 
                     PluginNamesBuilder.append(PluginFile.getName().replace(".class", ""));
                     PluginNamesBuilder.append(" ");
@@ -56,24 +68,18 @@ public class Calculate {
 
                     OpList.addOperator(plugin.getSign(), plugin.getOperatorName(),
                             plugin.getOperatorPrecedence(), plugin);
-
                 }
 
-            } catch (MalformedURLException | ClassNotFoundException e) {
-                e.printStackTrace();
-                logGenerator.addWarning(e.toString());
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-                logGenerator.addWarning(e.toString());
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-                logGenerator.addWarning(e.toString());
+            } catch (MalformedURLException | ClassNotFoundException |
+                        IllegalAccessException | InstantiationException e){
+
+                  e.printStackTrace(printErr);
+                  logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
             }
 
-            logGenerator.addInfo(PluginNamesBuilder.toString());
+             logGenerator.sendNormalLog(Calculate.class.getName(),PluginNamesBuilder.toString());
 
-        } else{logGenerator.addWarning("Plugins Directory not found"); }
-
+        } else{logGenerator.sendNormalLog(Calculate.class.getName(),"Plugins Directory not found"); }
     }
 
    private boolean isNumeric(String strNum) {
@@ -116,30 +122,17 @@ public class Calculate {
 
                     return ((Number) o).doubleValue();
 
-                } catch (NoSuchMethodException e) {
-                    logGenerator.addInfo(e.getStackTrace().toString());
-
-                } catch (InstantiationException e) {
-                    logGenerator.addInfo(e.getStackTrace().toString());
-
-                } catch (IllegalAccessException e) {
-                    logGenerator.addInfo(e.getStackTrace().toString());
-
-                } catch (InvocationTargetException e) {
-                    logGenerator.addInfo(e.getStackTrace().toString());
-
+                } catch (NoSuchMethodException | InstantiationException |
+                            IllegalAccessException | InvocationTargetException e) {
+                    e.printStackTrace(printErr);
+                    logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
                 }
-
             }
-
         }
-
-
-
         return -1;
     }
 
-    public  double evaluate(String expression) {
+    double evaluate(String expression) {
 
         Stack<Double> values = new Stack<Double>();
 
@@ -159,7 +152,6 @@ public class Calculate {
                 ops.pop();
             }
 
-
             else if (isOperator(expr.charAt(0))) {
 
                 while (!ops.empty() && hasPrecedence(expr.charAt(0), ops.peek()))
@@ -167,7 +159,6 @@ public class Calculate {
 
                 ops.push(expr.charAt(0));
             }
-
         }
 
 
@@ -176,20 +167,52 @@ public class Calculate {
 
         double result = values.pop();
 
-        logGenerator.addInfo("Computing operation " + expression + " with result " + result);
-
-
-
+        logGenerator.sendNormalLog(Calculate.class.getName(),
+                "Computing operation " + expression + " with result " + result);
 
         return result;
     }
 
-    public OperatorsList getOperatorList(){
+    OperatorsList getOperatorList(){
         return this.OpList;
     }
 
-    public int getPluginsCounter(){
+    int getPluginsCounter(){
         return this.PluginsCounter;
     }
 
+     boolean isExpressionCorrect(String expr){
+
+        String [] ExpElements = expr.split("\\s+");
+
+        for(int i=0; i<ExpElements.length-1; i++){
+
+            try{
+
+                if(isOperator(ExpElements[i].charAt(0)) && isOperator(ExpElements[i+1].charAt(0)))
+                    throw new NeighbouringOperatorsExpectation();
+
+                if(ExpElements[i].charAt(0) == ')' && ExpElements[i+1].charAt(0) == '(') {
+                    throw new WrongBracketsInput();
+                }
+            }
+
+              catch (NeighbouringOperatorsExpectation | WrongBracketsInput e){
+                  e.printStackTrace(printErr);
+                  logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
+                  return false;
+              }
+
+        }
+
+
+
+
+
+
+
+
+
+        return true;
+    }
 }
