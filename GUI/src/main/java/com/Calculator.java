@@ -120,7 +120,7 @@ class Calculator {
         this.CalFrame.add(CalPanelText);
         this.CalFrame.add(CalPanelInput);
         this.CalFrame.setSize(500, 500);
-        this.CalFrame.setResizable(false);
+        this.CalFrame.setResizable(true);
         this.CalFrame.pack();
     }
 
@@ -152,6 +152,10 @@ class Calculator {
 
             for (CalculatorButton btn : Buttons) {
                 if (e.getSource() == btn) {
+
+                    if(btn.getText().equals("Exit")){
+                        System.exit(0);
+                    }
 
                     if(btn.getText().equals(String.valueOf('='))){
 

@@ -35,7 +35,7 @@ public class Operator {
     private void setOperatorParamNumber(int param){
         this.opParamNumber = param;
     }
-
+    
     public char getOperatorSign(){
         return this.opSign;
     }

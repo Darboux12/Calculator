@@ -186,6 +186,8 @@ class Calculate {
 
                 while (!ops.empty() && hasPrecedence(expr.charAt(0), ops.peek())){
 
+                    //ta
+
                     opPeek = ops.peek();
 
                     if(isTwoParamOperator(opPeek))
@@ -195,8 +197,13 @@ class Calculate {
 
                         if(!values.empty())
                             values.push(applyOp(ops.pop(),0, values.pop()));
+                        else
+                            break;
+
 
                     }
+
+
 
                 }
 
@@ -240,9 +247,21 @@ class Calculate {
 
             try{
 
-                // ) op and * op
+                // TwoParam  TwoParam
 
-             /*   if(!(isNumeric(ExpElements[i])) && !(isNumeric(ExpElements[i+1])) &&
+                if(isTwoParamOperator(ExpElements[i].charAt(0)) &&
+                        isTwoParamOperator(ExpElements[i+1].charAt(0)) &&
+                        ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '(')
+                              throw new NeighbouringOperatorsExpectation();
+
+
+
+
+
+
+
+
+            /*    if(!(isNumeric(ExpElements[i])) && !(isNumeric(ExpElements[i+1])) &&
                         ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '(')
                              throw new NeighbouringOperatorsExpectation(); */
 
@@ -256,7 +275,7 @@ class Calculate {
 
             }
 
-              catch ( WrongBracketsInput e){
+              catch ( NeighbouringOperatorsExpectation | WrongBracketsInput e){
                   e.printStackTrace(printErr);
                   logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
                   return false;

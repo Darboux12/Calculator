@@ -8,3 +8,358 @@ Sent at 22:33:48 on 15 gru 2019
 Send from: com.Calculate 
 Message: Loaded plugins: Cube Power Root Square SquareRoot  
 ########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:40:33 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:40:33 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cube Power Root Square SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:40:58 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 27 # 3 with result 3.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:41:07 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 3 # 27 with result 1.041528498231435 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:49:13 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:49:13 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:49:17 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 6 - 6 with result 0.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:50:32 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation ( 8 + 7 )  * 5 with result 75.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:53:08 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:53:08 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:53:14 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:53:14 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:53:43 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation &  ( 5 + 20 )  with result 5.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:54:08 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 5 +  & 9 with result 8.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:54:54 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 5 +  & 9 with result 8.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:56:39 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:56:39 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:57:49 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:57:49 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:58:10 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation &  ( 9 - 1 )  with result 2.8284271247461903 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 22:58:43 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation &  (  & 9 )  with result 1.7320508075688772 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:04:40 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:04:40 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:05:37 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:05:37 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:08:43 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:08:43 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:08:49 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation &  & 81 with result 3.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:09:10 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:09:10 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:09:18 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation &  & 81 with result 3.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:09:52 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 5 -  & 9 with result 2.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:10:14 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation &  ( 9 + 16 )  with result 5.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:11:06 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 2 ^ 2 ^ 3 with result 64.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:15:58 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:15:58 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power Root Sin SquareRoot  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:16:15 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation s 30 with result -0.9880316240928618 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:21:44 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:21:44 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:22:20 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:22:20 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:22:43 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:22:43 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:23:05 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:23:05 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:23:42 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:23:42 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:24:30 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:24:30 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:24:47 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:24:47 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:24:58 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:24:58 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:25:14 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:25:14 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:25:30 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:25:30 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:25:41 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:25:41 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:26:05 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:26:05 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:27:06 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:27:06 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:27:23 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:27:23 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:28:20 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:28:20 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:28:37 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:28:37 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Cos Cotan Power Root Sin SquareRoot Tan  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:28:53 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation s 30 with result 0.49999999999999994 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 23:29:34 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation s  ( 30 )  with result 0.49999999999999994 
+########################################################
