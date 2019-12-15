@@ -96,6 +96,26 @@ class Calculate {
         return false;
     }
 
+    private boolean isTwoParamOperator(char op){
+
+        for(Operator opElement : this.OpList.list)
+            if(op == opElement.getOperatorSign())
+                if (opElement.getOpParamNumber() == 2)
+                        return true;
+
+        return false;
+    }
+
+    private boolean isOneParamOperator(char op){
+
+        for(Operator opElement : this.OpList.list)
+            if(op == opElement.getOperatorSign())
+                if (opElement.getOpParamNumber() == 1)
+                    return true;
+
+        return false;
+    }
+
     private boolean hasPrecedence(char op1, char op2) {
 
         if (op2 == '(' || op2 == ')')
@@ -139,6 +159,8 @@ class Calculate {
 
         Stack<Character> ops = new Stack<Character>();
 
+        char opPeek;
+
         for(String expr : expression.split("\\s+")){
 
             if (isNumeric(expr))
@@ -148,23 +170,51 @@ class Calculate {
                 ops.push(expr.charAt(0));
 
             else if (expr.charAt(0) == ')') {
-                while (ops.peek() != '(')
-                    values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+                while (ops.peek() != '('){
+
+                    if(isTwoParamOperator(ops.peek()))
+                         values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+
+                    if(isOneParamOperator(ops.peek()))
+                        values.push(applyOp(ops.pop(),0, values.pop()));
+                }
+
                 ops.pop();
             }
 
             else if (isOperator(expr.charAt(0))) {
 
-                while (!ops.empty() && hasPrecedence(expr.charAt(0), ops.peek()))
-                    values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+                while (!ops.empty() && hasPrecedence(expr.charAt(0), ops.peek())){
+
+                    opPeek = ops.peek();
+
+                    if(isTwoParamOperator(opPeek))
+                        values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+
+                    if(isOneParamOperator(opPeek)){
+
+                        if(!values.empty())
+                            values.push(applyOp(ops.pop(),0, values.pop()));
+
+                    }
+
+                }
 
                 ops.push(expr.charAt(0));
             }
         }
 
 
-        while (!ops.empty())
-            values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+        while (!ops.empty()){
+
+            opPeek = ops.peek();
+
+            if(isTwoParamOperator(ops.peek()))
+                values.push(applyOp(ops.pop(), values.pop(), values.pop()));
+
+            if(isOneParamOperator(opPeek))
+                values.push(applyOp(ops.pop(), 0,values.pop()));
+        }
 
         double result = values.pop();
 
@@ -192,21 +242,21 @@ class Calculate {
 
                 // ) op and * op
 
-                if(!(isNumeric(ExpElements[i])) && !(isNumeric(ExpElements[i+1])) &&
+             /*   if(!(isNumeric(ExpElements[i])) && !(isNumeric(ExpElements[i+1])) &&
                         ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '(')
-                             throw new NeighbouringOperatorsExpectation();
+                             throw new NeighbouringOperatorsExpectation(); */
 
                 // )(
 
                 if(ExpElements[i].charAt(0) == ')' && ExpElements[i+1].charAt(0) == '(') {
                     throw new WrongBracketsInput(); }
 
-               
+
 
 
             }
 
-              catch (NeighbouringOperatorsExpectation | WrongBracketsInput e){
+              catch ( WrongBracketsInput e){
                   e.printStackTrace(printErr);
                   logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
                   return false;
