@@ -1,7 +1,6 @@
-package com.calculator;
+package com;
 
 import com.expectations.InCorrectInputExpectation;
-import com.expectations.NeighbouringOperatorsExpectation;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,15 +1,15 @@
-package com.calculator;
+package com.plugins;
 
-class MultiplyOperatorDataBuilder extends  OperatorDataBuilder {
+class DivideOperatorDataBuilder extends OperatorDataBuilder {
 
     @Override
     public void buildSign() {
-        opData.setSign('*');
+        opData.setSign('/');
     }
 
     @Override
     public void buildName() {
-        opData.setName("multiply");
+        opData.setName("divide");
     }
 
     @Override

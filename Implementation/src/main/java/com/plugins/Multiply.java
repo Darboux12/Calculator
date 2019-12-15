@@ -1,11 +1,11 @@
-package com.calculator;
+package com.plugins;
 
-public class Divide implements iPluginStructure {
+public class Multiply implements iPluginStructure {
 
     private OperatorDataDirector director;
     private OperatorData opData;
 
-    Divide() {
+    public  Multiply() {
 
         this.director = new OperatorDataDirector();
         this.setOperatorBuilder();
@@ -14,8 +14,7 @@ public class Divide implements iPluginStructure {
     }
 
     private void setOperatorBuilder(){
-        this.director.setOperatorBuilder(new DivideOperatorDataBuilder());
-
+        this.director.setOperatorBuilder(new MultiplyOperatorDataBuilder());
     }
 
     public char getSign() {
@@ -31,6 +30,6 @@ public class Divide implements iPluginStructure {
     }
 
     public double compute(double a, double b) {
-        return a / b;
+        return a * b;
     }
 }

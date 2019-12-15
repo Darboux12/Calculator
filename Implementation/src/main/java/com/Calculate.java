@@ -1,7 +1,8 @@
-package com.calculator;
+package com;
 
 import com.expectations.NeighbouringOperatorsExpectation;
 import com.expectations.WrongBracketsInput;
+import com.plugins.iPluginStructure;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -31,9 +32,9 @@ class Calculate {
 
     private void loadPlugins() {
 
-        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\Calculator\\plugins");
+        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\TO2019\\plugins");
 
-        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\Calculator\\plugins\\com\\calculator");
+        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\TO2019\\plugins\\com\\plugins");
 
         String PluginNames = "Loaded plugins: ";
 
@@ -47,7 +48,7 @@ class Calculate {
 
               logGenerator.sendNormalLog(Calculate.class.getName(),"Plugins Directory found");
 
-              this.PluginsCounter = Objects.requireNonNull(PluginsDirectory.listFiles()).length;
+            this.PluginsCounter = PluginsDirectory.listFiles().length;
 
               try {
 
@@ -60,7 +61,7 @@ class Calculate {
                     PluginNamesBuilder.append(PluginFile.getName().replace(".class", ""));
                     PluginNamesBuilder.append(" ");
 
-                    Class loadedClass = cl.loadClass("com.calculator." +                                                                PluginFile.getName().replace(".class", ""));
+                    Class loadedClass = cl.loadClass("com.plugins." +                                                                PluginFile.getName().replace(".class", ""));
 
                     PluginInstance = loadedClass.newInstance();
 

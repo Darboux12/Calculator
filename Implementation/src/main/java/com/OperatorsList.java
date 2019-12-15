@@ -1,4 +1,9 @@
-package com.calculator;
+package com;
+
+import com.plugins.Add;
+import com.plugins.Divide;
+import com.plugins.Multiply;
+import com.plugins.Subtract;
 
 import java.util.ArrayList;
 import java.util.List;

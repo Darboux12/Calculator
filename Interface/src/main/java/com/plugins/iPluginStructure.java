@@ -1,4 +1,4 @@
-package com.calculator;
+package com.plugins;
 
 public interface iPluginStructure {
     char getSign();

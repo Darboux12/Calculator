@@ -1,4 +1,4 @@
-package com.calculator;
+package com.plugins;
 
 public class SubtractOperatorDataBuilder extends OperatorDataBuilder {
 

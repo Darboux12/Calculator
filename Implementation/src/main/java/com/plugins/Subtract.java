@@ -1,12 +1,11 @@
-package com.calculator;
+package com.plugins;
 
-
-public class Add implements iPluginStructure {
+public class Subtract implements iPluginStructure {
 
     private OperatorDataDirector director;
     private OperatorData opData;
 
-    Add(){
+    public Subtract() {
 
         this.director = new OperatorDataDirector();
         this.setOperatorBuilder();
@@ -15,7 +14,7 @@ public class Add implements iPluginStructure {
     }
 
     private void setOperatorBuilder(){
-        this.director.setOperatorBuilder(new AddOperatorDataBuilder());
+        this.director.setOperatorBuilder(new SubtractOperatorDataBuilder());
     }
 
     public char getSign() {
@@ -31,7 +30,6 @@ public class Add implements iPluginStructure {
     }
 
     public double compute(double a, double b) {
-        return a + b;
+        return a - b;
     }
 }
-
