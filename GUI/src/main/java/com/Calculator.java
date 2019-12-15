@@ -86,7 +86,8 @@ class Calculator {
         }
 
         for (Operator op : this.cal.getOperatorList().list) {
-            this.Buttons[i] = new CalculatorButton(String.valueOf(op.getOperatorName()) + " ( "
+
+            this.Buttons[i] = new CalculatorButton((op.getOperatorName()) + " ( "
                                                     + op.getOperatorSign() + " ) ",op.getOperatorSign());
             this.Buttons[i].addActionListener(CalListener);
             this.CalPanelInput.add(this.Buttons[i]);
@@ -108,7 +109,7 @@ class Calculator {
         i++;
 
         while(i < getNumberOfButtons()){
-            this.Buttons[i] = new CalculatorButton("");
+            this.Buttons[i] = new CalculatorButton(" ");
             this.CalPanelInput.add(this.Buttons[i]);
             i++;
         }

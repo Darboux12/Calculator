@@ -16,4 +16,9 @@ public class SubtractOperatorDataBuilder extends OperatorDataBuilder {
     public void buildPrecedence() {
         opData.setPrecedence(1);
     }
+
+    @Override
+    public void buildParamNumber() {
+        opData.setOpParamNumber(2);
+    }
 }

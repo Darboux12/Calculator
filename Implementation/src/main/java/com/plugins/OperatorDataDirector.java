@@ -1,18 +1,18 @@
 package com.plugins;
 
-public class OperatorDataDirector {
+ class OperatorDataDirector {
 
     private OperatorDataBuilder opBuilder;
 
-    public void setOperatorBuilder(OperatorDataBuilder op){
+    void setOperatorBuilder(OperatorDataBuilder op){
         this.opBuilder = op;
     }
 
-    public OperatorData getOperatorData(){
+    OperatorData getOperatorData(){
         return this.opBuilder.getOperatorData();
     }
 
-    public void constructOperatorData(){
+    void constructOperatorData(){
 
         this.opBuilder.createNewOperatorData();
         this.opBuilder.buildSign();

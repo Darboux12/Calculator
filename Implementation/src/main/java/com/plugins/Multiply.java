@@ -29,6 +29,10 @@ public class Multiply implements iPluginStructure {
         return this.opData.precedence();
     }
 
+    public int getOperatorParamNumber(){
+        return this.opData.opParamNumber();
+    }
+
     public double compute(double a, double b) {
         return a * b;
     }

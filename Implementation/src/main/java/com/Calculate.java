@@ -68,7 +68,7 @@ class Calculate {
                     iPluginStructure plugin = (iPluginStructure ) PluginInstance;
 
                     OpList.addOperator(plugin.getSign(), plugin.getOperatorName(),
-                            plugin.getOperatorPrecedence(), plugin);
+                            plugin.getOperatorPrecedence(),plugin.getOperatorParamNumber(),plugin);
                 }
 
             } catch (MalformedURLException | ClassNotFoundException |
@@ -190,14 +190,20 @@ class Calculate {
 
             try{
 
+                // ) op and * op
+
                 if(!(isNumeric(ExpElements[i])) && !(isNumeric(ExpElements[i+1])) &&
-                        ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '('
-                )
+                        ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '(')
                              throw new NeighbouringOperatorsExpectation();
 
+                // )(
+
                 if(ExpElements[i].charAt(0) == ')' && ExpElements[i+1].charAt(0) == '(') {
-                    throw new WrongBracketsInput();
-                }
+                    throw new WrongBracketsInput(); }
+
+               
+
+
             }
 
               catch (NeighbouringOperatorsExpectation | WrongBracketsInput e){

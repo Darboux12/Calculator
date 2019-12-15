@@ -1,89 +1,270 @@
 Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:25:55 on 15 gru 2019 
+Sent at 15:54:48 on 15 gru 2019 
 Send from: com.Calculate 
 Message: Plugins Directory found 
 ########################################################
 Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:25:55 on 15 gru 2019 
+Sent at 15:54:48 on 15 gru 2019 
 Send from: com.Calculate 
-Message: Loaded plugins: Cube Power Root Square SquareRoot  
+Message: Loaded plugins: Power  
 ########################################################
-Source Method: LogGenerator.sendExpectationLog() 
-Sent at 15:25:58 on 15 gru 2019 
-Send from: com.Calculate 
-Expectation thrown: 
-com.expectations.WrongBracketsInput: ) bracket cannot be followed by ( bracket
-	at com.Calculate.isExpressionCorrect(Calculate.java:199)
-	at com.Calculator.isInputExpressionCorrect(Calculator.java:130)
-	at com.Calculator.access$400(Calculator.java:12)
-	at com.Calculator$ListenForButton.actionPerformed(Calculator.java:157)
-	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
-	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
-	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
-	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
-	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
-	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
-	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
-	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
-	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
-	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
-	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
-	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
-	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
-	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
-	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
-	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
-	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
-	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
-	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
-	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
-	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
-	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
-	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
-	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
-	at java.base/java.security.AccessController.doPrivileged(Native Method)
-	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
-	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
-	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
-	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
-	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
-	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
-	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
-	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
-########################################################Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:28:18 on 15 gru 2019 
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 15:57:03 on 15 gru 2019 
 Send from: com.Calculate 
 Message: Plugins Directory found 
 ########################################################
 Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:28:18 on 15 gru 2019 
+Sent at 15:57:03 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins:  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 15:58:00 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 15:58:00 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:01:38 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:01:38 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:04:39 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:04:39 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:07:56 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:07:56 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:10:10 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:10:10 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:10:15 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:10:15 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:13:30 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:13:30 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:14:41 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:14:41 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:17:33 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:17:33 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins:  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:17:56 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:17:56 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:18:56 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:18:56 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:19:12 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:19:12 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:34:59 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:34:59 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:35:14 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 9 ^ 2 with result 81.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:49:06 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:49:06 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins:  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:49:09 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 9 + 9 with result 18.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:49:12 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 18.0  - 6 with result 12.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:50:26 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:50:26 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins:  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:50:29 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 9 + 9 with result 18.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:53:51 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 16:59:23 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:00:23 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:00:43 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:00:43 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:01:25 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:01:31 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:01:31 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Loaded plugins: Power  
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:01:37 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Computing operation 6 ^ 2 with result 36.0 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:05:11 on 15 gru 2019 
+Send from: com.Calculate 
+Message: Plugins Directory found 
+########################################################
+Source Method: LogGenerator.sendNormalLog() 
+Sent at 17:05:11 on 15 gru 2019 
 Send from: com.Calculate 
 Message: Loaded plugins: Cube Power Root Square SquareRoot  
 ########################################################
 Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:28:29 on 15 gru 2019 
+Sent at 17:05:28 on 15 gru 2019 
 Send from: com.Calculate 
-Message: Computing operation ( 5 -  -6 )  with result 11.0 
+Message: Computing operation 9 # 6 with result 1.4422495703074083 
 ########################################################
 Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:28:42 on 15 gru 2019 
+Sent at 17:06:17 on 15 gru 2019 
 Send from: com.Calculate 
-Message: Computing operation 5 -  -6 with result 11.0 
+Message: Computing operation 9 & 6 with result 3.0 
 ########################################################
 Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:28:49 on 15 gru 2019 
+Sent at 17:09:19 on 15 gru 2019 
 Send from: com.Calculate 
-Message: Computing operation 11.0  - 6 - 6 with result -1.0 
+Message: Plugins Directory found 
 ########################################################
 Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:29:03 on 15 gru 2019 
+Sent at 17:09:19 on 15 gru 2019 
 Send from: com.Calculate 
-Message: Computing operation 6 - 6 - 6 with result -6.0 
+Message: Loaded plugins: Cube Power Root Square SquareRoot  
 ########################################################
 Source Method: LogGenerator.sendNormalLog() 
-Sent at 15:29:22 on 15 gru 2019 
+Sent at 17:09:33 on 15 gru 2019 
 Send from: com.Calculate 
-Message: Computing operation ( 5 ^ 5 )  # 5 with result 5.000000000000001 
+Message: Computing operation 2 *  ( 5 - 1 )  with result 8.0 
 ########################################################

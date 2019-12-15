@@ -16,4 +16,9 @@ class MultiplyOperatorDataBuilder extends OperatorDataBuilder {
     public void buildPrecedence() {
         opData.setPrecedence(2);
     }
+
+    @Override
+    public void buildParamNumber() {
+        opData.setOpParamNumber(2);
+    }
 }

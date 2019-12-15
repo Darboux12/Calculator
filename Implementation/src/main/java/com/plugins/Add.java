@@ -6,7 +6,7 @@ public class Add implements iPluginStructure {
     private OperatorDataDirector director;
     private OperatorData opData;
 
-   public Add(){
+    public Add(){
 
         this.director = new OperatorDataDirector();
         this.setOperatorBuilder();
@@ -28,6 +28,10 @@ public class Add implements iPluginStructure {
 
     public int getOperatorPrecedence() {
         return this.opData.precedence();
+    }
+
+    public int getOperatorParamNumber(){
+       return this.opData.opParamNumber();
     }
 
     public double compute(double a, double b) {
