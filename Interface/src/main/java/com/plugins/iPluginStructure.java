@@ -1,7 +1,7 @@
 package com.plugins;
 
 public interface iPluginStructure {
-    char getSign();
+    String getSign();
     String getOperatorName();
     int getOperatorPrecedence();
     int getOperatorParamNumber();

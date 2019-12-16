@@ -32,9 +32,9 @@ class Calculate {
 
     private void loadPlugins() {
 
-        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\TO2019\\plugins");
+        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\TO\\plugins");
 
-        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\TO2019\\plugins\\com\\plugins");
+        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\TO\\plugins\\com\\plugins");
 
         String PluginNames = "Loaded plugins: ";
 
@@ -87,53 +87,53 @@ class Calculate {
        return strNum.matches("-?\\d+(\\.\\d+)?");
    }
 
-    private boolean isOperator(char op){
+    private boolean isOperator(String op){
 
         for(Operator opElement : this.OpList.list)
-            if(op == opElement.getOperatorSign())
+            if(op.equals(opElement.getOperatorSign()))
                 return true;
 
         return false;
     }
 
-    private boolean isTwoParamOperator(char op){
+    private boolean isTwoParamOperator(String op){
 
         for(Operator opElement : this.OpList.list)
-            if(op == opElement.getOperatorSign())
+            if(op.equals(opElement.getOperatorSign()))
                 if (opElement.getOpParamNumber() == 2)
                         return true;
 
         return false;
     }
 
-    private boolean isOneParamOperator(char op){
+    private boolean isOneParamOperator(String op){
 
         for(Operator opElement : this.OpList.list)
-            if(op == opElement.getOperatorSign())
+            if(op.equals( opElement.getOperatorSign()))
                 if (opElement.getOpParamNumber() == 1)
                     return true;
 
         return false;
     }
 
-    private boolean hasPrecedence(char op1, char op2) {
+    private boolean hasPrecedence(String op1, String op2) {
 
-        if (op2 == '(' || op2 == ')')
+        if (op2.equals("(")  || op2.equals(")"))
             return false;
 
         for(Operator op1Element : this.OpList.list)
             for(Operator op2Element : this.OpList.list)
-                if(op1 == op1Element.getOperatorSign() && op2 == op2Element.getOperatorSign())
+                if(op1.equals(op1Element.getOperatorSign()) && op2.equals(op2Element.getOperatorSign()))
                     if(op1Element.getOperatorPrecedence() > op2Element.getOperatorPrecedence())
                         return false;
 
         return true;
     }
 
-    private  double applyOp(char op, double b, double a) {
+    private  double applyOp(String op, double b, double a) {
 
         for (Operator opElement : OpList.list) {
-            if (op == opElement.getOperatorSign()) {
+            if (op.equals(opElement.getOperatorSign())) {
 
                 try {
 
@@ -155,22 +155,22 @@ class Calculate {
 
     double evaluate(String expression) {
 
-        Stack<Double> values = new Stack<Double>();
+        Stack<Double> values = new Stack<>();
 
-        Stack<Character> ops = new Stack<Character>();
+        Stack<String> ops = new Stack<>();
 
-        char opPeek;
+        String opPeek;
 
         for(String expr : expression.split("\\s+")){
 
             if (isNumeric(expr))
                 values.push(Double.parseDouble(expr));
 
-            else if (expr.charAt(0) == '(')
-                ops.push(expr.charAt(0));
+            else if (expr.equals("("))
+                ops.push(expr);
 
-            else if (expr.charAt(0) == ')') {
-                while (ops.peek() != '('){
+            else if (expr.equals(")")) {
+                while (!ops.peek().equals("(")){
 
                     if(isTwoParamOperator(ops.peek()))
                          values.push(applyOp(ops.pop(), values.pop(), values.pop()));
@@ -182,9 +182,9 @@ class Calculate {
                 ops.pop();
             }
 
-            else if (isOperator(expr.charAt(0))) {
+            else if (isOperator(expr)) {
 
-                while (!ops.empty() && hasPrecedence(expr.charAt(0), ops.peek())){
+                while (!ops.empty() && hasPrecedence(expr, ops.peek())){
 
                     //ta
 
@@ -207,7 +207,7 @@ class Calculate {
 
                 }
 
-                ops.push(expr.charAt(0));
+                ops.push(expr);
             }
         }
 
@@ -249,9 +249,9 @@ class Calculate {
 
                 // TwoParam  TwoParam
 
-                if(isTwoParamOperator(ExpElements[i].charAt(0)) &&
-                        isTwoParamOperator(ExpElements[i+1].charAt(0)) &&
-                        ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '(')
+                if(isTwoParamOperator(ExpElements[i]) &&
+                        isTwoParamOperator(ExpElements[i+1]) &&
+                        !ExpElements[i].equals(")") && !ExpElements[i + 1].equals("("))
                               throw new NeighbouringOperatorsExpectation();
 
 

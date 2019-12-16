@@ -4,7 +4,7 @@ class MultiplyOperatorDataBuilder extends OperatorDataBuilder {
 
     @Override
     public void buildSign() {
-        opData.setSign('*');
+        opData.setSign("*");
     }
 
     @Override

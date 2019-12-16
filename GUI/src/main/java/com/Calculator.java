@@ -22,7 +22,7 @@ class Calculator {
      private LogGenerator logGenerator;
      private StringWriter errors;
      private PrintWriter printErr;
-     private char lastOp = ' ';
+     private String lastOp = " ";
 
      private String ErrorMessage = "Incorrect input expression";
 
@@ -69,9 +69,50 @@ class Calculator {
     private void setCalTextField() {
         CalTextField = new JTextField("", 40);
         CalTextField.setEditable(false);
-        CalTextField.setFont(new Font("SansSerif", Font.BOLD, 20));
+        CalTextField.setFont(new Font("SansSerif", Font.BOLD, 18));
         CalTextField.setHorizontalAlignment(JTextField.CENTER);
         CalTextField.setSize(20, 20);
+    }
+
+    private void setButtonsWithNames() {
+
+        int i = 0;
+
+        while (i < 10) {
+            this.Buttons[i] = new CalculatorButton(Integer.toString(i));
+            this.Buttons[i].addActionListener(CalListener);
+            this.CalPanelInput.add(this.Buttons[i]);
+            i++;
+        }
+
+        for (Operator op : this.cal.getOperatorList().list) {
+
+            this.Buttons[i] = new CalculatorButton((op.getOperatorName()) + " ( "
+                                                    + op.getOperatorSign() + " ) ",op.getOperatorSign());
+            this.Buttons[i].addActionListener(CalListener);
+            this.CalPanelInput.add(this.Buttons[i]);
+            i++;
+        }
+
+        char[] OtherButtonNames = {'.', '(', ')', '=', 'C'};
+
+        for (char c : OtherButtonNames) {
+            this.Buttons[i] = new CalculatorButton(String.valueOf(c));
+            this.Buttons[i].addActionListener(CalListener);
+            this.CalPanelInput.add(this.Buttons[i]);
+            i++;
+        }
+
+        this.Buttons[i] = new CalculatorButton("Exit");
+        this.Buttons[i].addActionListener(CalListener);
+        this.CalPanelInput.add(this.Buttons[i]);
+        i++;
+
+        while(i < getNumberOfButtons()){
+            this.Buttons[i] = new CalculatorButton(" ");
+            this.CalPanelInput.add(this.Buttons[i]);
+            i++;
+        }
     }
 
     private void setButtons() {
@@ -87,8 +128,7 @@ class Calculator {
 
         for (Operator op : this.cal.getOperatorList().list) {
 
-            this.Buttons[i] = new CalculatorButton((op.getOperatorName()) + " ( "
-                                                    + op.getOperatorSign() + " ) ",op.getOperatorSign());
+            this.Buttons[i] = new CalculatorButton((op.getOperatorSign()));
             this.Buttons[i].addActionListener(CalListener);
             this.CalPanelInput.add(this.Buttons[i]);
             i++;
@@ -173,22 +213,22 @@ class Calculator {
                     }
 
                     if(btn.getText().equals(String.valueOf('C'))){
-                        lastOp = ' ';
+                        lastOp = " ";
                         expr = "";
                         CalTextField.setText(expr);
                         break;
                     }
 
                     if(Character.isDigit(btn.getText().charAt(0))){
-                        lastOp = btn.getText().charAt(0);
+                        lastOp = btn.getText();
                         expr += btn.getText();
                         CalTextField.setText(expr);
                         break;
                     }
 
-                    if(btn.getButtonSign() == '-'){
+                    if(btn.getButtonSign() == "-"){
 
-                        if(lastOp == '('){
+                        if(lastOp == "("){
                             lastOp = btn.getButtonSign();
                             expr += " " + btn.getButtonSign();
                             CalTextField.setText(expr);
@@ -197,7 +237,7 @@ class Calculator {
 
                         for(Operator op : cal.getOperatorList().list){
 
-                            if(lastOp == op.getOperatorSign() || lastOp == ' '){
+                            if(lastOp.equals(op.getOperatorSign()) || lastOp.equals(" ")){
 
                                 lastOp = btn.getButtonSign();
 
@@ -214,8 +254,9 @@ class Calculator {
 
                         }
 
-                        if(lastOp == '-')
+                        if(lastOp.equals("-")) {
                             break;
+                        }
                     }
 
                     if(expr.isEmpty()){

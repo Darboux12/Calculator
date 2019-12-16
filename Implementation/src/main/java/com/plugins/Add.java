@@ -18,7 +18,7 @@ public class Add implements iPluginStructure {
         this.director.setOperatorBuilder(new AddOperatorDataBuilder());
     }
 
-    public char getSign() {
+    public String getSign() {
         return this.opData.sign();
     }
 

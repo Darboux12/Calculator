@@ -17,7 +17,7 @@ public class Subtract implements iPluginStructure {
         this.director.setOperatorBuilder(new SubtractOperatorDataBuilder());
     }
 
-    public char getSign() {
+    public String getSign() {
         return this.opData.sign();
     }
 

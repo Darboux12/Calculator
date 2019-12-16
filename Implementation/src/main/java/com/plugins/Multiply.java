@@ -17,7 +17,7 @@ public class Multiply implements iPluginStructure {
         this.director.setOperatorBuilder(new MultiplyOperatorDataBuilder());
     }
 
-    public char getSign() {
+    public String getSign() {
         return this.opData.sign();
     }
 

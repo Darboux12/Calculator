@@ -4,7 +4,7 @@ public class SubtractOperatorDataBuilder extends OperatorDataBuilder {
 
     @Override
     public void buildSign() {
-        opData.setSign('-');
+        opData.setSign("-");
     }
 
     @Override

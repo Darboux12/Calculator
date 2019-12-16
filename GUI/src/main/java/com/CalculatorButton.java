@@ -5,9 +5,9 @@ import java.awt.*;
 
 public class CalculatorButton extends JButton {
 
-    private char sign;
+    private String sign;
 
-    CalculatorButton(String name, char sign){
+    CalculatorButton(String name, String sign){
         super(name);
         setSign(sign);
         setPreferredSize(new Dimension(40,40));
@@ -15,15 +15,16 @@ public class CalculatorButton extends JButton {
 
     CalculatorButton(String name){
         super(name);
-        setSign(name.charAt(0));
+        setSign(name);
+        this.setFont(new Font("SansSerif", Font.BOLD, 15));
         setPreferredSize(new Dimension(40,40));
     }
 
-    private void setSign(char c){
+    private void setSign(String c){
         this.sign = c;
     }
 
-    public char getButtonSign(){
+    public String getButtonSign(){
         return this.sign;
     }
 }

@@ -2,21 +2,21 @@ package com.plugins;
 
 public class OperatorData {
 
-    private char sign;
+    private String sign;
     private String name;
     private int precedence;
     private int opParamNumber;
 
     OperatorData(){};
 
-    public OperatorData(char op, String name, int prec,int param) {
+    public OperatorData(String op, String name, int prec,int param) {
         this.setSign(op);
         this.setName(name);
         this.setPrecedence(prec);
         this.setOpParamNumber(param);
     }
 
-    public char sign() {
+    public String sign() {
         return this.sign;
     }
 
@@ -32,7 +32,7 @@ public class OperatorData {
         return this.opParamNumber;
     }
 
-     void setSign(char sign){
+     void setSign(String sign){
         this.sign = sign;
     }
 

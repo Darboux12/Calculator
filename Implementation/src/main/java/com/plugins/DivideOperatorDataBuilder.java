@@ -4,7 +4,7 @@ class DivideOperatorDataBuilder extends OperatorDataBuilder {
 
     @Override
     public void buildSign() {
-        opData.setSign('/');
+        opData.setSign("/");
     }
 
     @Override

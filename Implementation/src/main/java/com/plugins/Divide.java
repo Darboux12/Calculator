@@ -18,7 +18,7 @@ public class Divide implements iPluginStructure {
 
     }
 
-    public char getSign() {
+    public String getSign() {
         return this.opData.sign();
     }
 

@@ -2,13 +2,13 @@ package com;
 
 public class Operator {
 
-   private char opSign;
+   private String opSign;
    private String opName;
    private int opPrecedence;
    private int opParamNumber;
    private Object opFunction;
 
-    Operator(char sign, String name, int precedence, int param, Object func){
+    Operator(String sign, String name, int precedence, int param, Object func){
         this.setOperatorSign(sign);
         this.setOperatorName(name);
         this.setOperatorPrecedence(precedence);
@@ -16,7 +16,7 @@ public class Operator {
         this.setOperatorParamNumber(param);
     }
 
-    private void setOperatorSign(char sign){
+    private void setOperatorSign(String sign){
         this.opSign = sign;
     }
 
@@ -36,7 +36,7 @@ public class Operator {
         this.opParamNumber = param;
     }
     
-    public char getOperatorSign(){
+    public String getOperatorSign(){
         return this.opSign;
     }
 
