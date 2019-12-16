@@ -1,6 +1,8 @@
 package com;
 
 import com.expectations.InCorrectInputExpectation;
+import com.expectations.NeighbouringOperatorsExpectation;
+import com.expectations.WrongBracketsInput;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,8 +25,7 @@ class Calculator {
      private StringWriter errors;
      private PrintWriter printErr;
      private String lastOp = " ";
-
-     private String ErrorMessage = "Incorrect input expression";
+     private int ExpecFlag;
 
      Calculator() {
 
@@ -67,7 +68,7 @@ class Calculator {
     }
 
     private void setCalTextField() {
-        CalTextField = new JTextField("", 40);
+        CalTextField = new JTextField("", 60);
         CalTextField.setEditable(false);
         CalTextField.setFont(new Font("SansSerif", Font.BOLD, 18));
         CalTextField.setHorizontalAlignment(JTextField.CENTER);
@@ -166,15 +167,13 @@ class Calculator {
 
     private boolean isInputExpressionCorrect(String expr){
 
-             try{
+             try{ this.cal.isExpressionCorrect(expr); }
 
-                 if(!(this.cal.isExpressionCorrect(expr)))
-                     throw new InCorrectInputExpectation();
-             }
-
-             catch (InCorrectInputExpectation e){
+             catch (NeighbouringOperatorsExpectation | WrongBracketsInput e){
                  e.printStackTrace(printErr);
                  logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
+                 CalTextField.setText(e.getMessage());
+                 ExpecFlag = 1;
                  return false;
              }
 
@@ -186,7 +185,9 @@ class Calculator {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            if(expr.equals(ErrorMessage)){
+
+            if(ExpecFlag == 1){
+                ExpecFlag = 0;
                 expr = "";
             }
 
@@ -195,6 +196,12 @@ class Calculator {
 
                     if(btn.getText().equals("Exit")){
                         System.exit(0);
+                    }
+
+                    if(btn.getText().equals(".")){
+                        expr += btn.getText();
+                        CalTextField.setText(expr);
+                        break;
                     }
 
                     if(btn.getText().equals(String.valueOf('='))){
@@ -206,8 +213,6 @@ class Calculator {
                         }
 
                         else{
-                            expr = ErrorMessage;
-                            CalTextField.setText(expr);
                             break;
                         }
                     }

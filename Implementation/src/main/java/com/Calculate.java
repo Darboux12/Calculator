@@ -32,9 +32,9 @@ class Calculate {
 
     private void loadPlugins() {
 
-        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\TO\\plugins");
+        File PluginsPackage = new File("C:\\Users\\Dariusz\\Desktop\\TO2019\\plugins");
 
-        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\TO\\plugins\\com\\plugins");
+        File PluginsDirectory = new File                                                                                                ("C:\\Users\\Dariusz\\Desktop\\TO2019\\plugins\\com\\plugins");
 
         String PluginNames = "Loaded plugins: ";
 
@@ -239,21 +239,28 @@ class Calculate {
         return this.PluginsCounter;
     }
 
-     boolean isExpressionCorrect(String expr){
+    void isExpressionCorrect(String expr) throws
+            NeighbouringOperatorsExpectation,WrongBracketsInput{
 
         String [] ExpElements = expr.split("\\s+");
 
         for(int i=0; i<ExpElements.length-1; i++){
 
-            try{
 
-                // TwoParam  TwoParam
 
-                if(isTwoParamOperator(ExpElements[i]) &&
-                        isTwoParamOperator(ExpElements[i+1]) &&
-                        !ExpElements[i].equals(")") && !ExpElements[i + 1].equals("("))
-                              throw new NeighbouringOperatorsExpectation();
+                //Two Non-One-Param Operators side by side
+                 if(isOperator(ExpElements[i]) && isOperator(ExpElements[i+1]) &&
+                         (isOneParamOperator(ExpElements[i]) && !isOneParamOperator(ExpElements[i+1])) ||
+                         (!isOneParamOperator(ExpElements[i]) && isOneParamOperator(ExpElements[i+1])) ||
+                         (isTwoParamOperator(ExpElements[i]) && isTwoParamOperator(ExpElements[i+1])))
+                                 throw new NeighbouringOperatorsExpectation();
 
+                 // No numbers for two-param operator
+
+         /*   if(!isNumeric(ExpElements[i]) && !ExpElements[i].equals(")")  ){
+                throw new NeighbouringOperatorsExpectation();
+
+            } */
 
 
 
@@ -265,21 +272,16 @@ class Calculate {
                         ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '(')
                              throw new NeighbouringOperatorsExpectation(); */
 
-                // )(
-
+                // Wrong bracket order )(
                 if(ExpElements[i].charAt(0) == ')' && ExpElements[i+1].charAt(0) == '(') {
                     throw new WrongBracketsInput(); }
 
 
 
 
-            }
 
-              catch ( NeighbouringOperatorsExpectation | WrongBracketsInput e){
-                  e.printStackTrace(printErr);
-                  logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
-                  return false;
-              }
+
+
 
         }
 
@@ -291,6 +293,6 @@ class Calculate {
 
 
 
-        return true;
+
     }
 }
