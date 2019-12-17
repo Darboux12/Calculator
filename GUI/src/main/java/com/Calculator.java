@@ -1,8 +1,6 @@
 package com;
 
-import com.expectations.InCorrectInputExpectation;
-import com.expectations.NeighbouringOperatorsExpectation;
-import com.expectations.WrongBracketsInput;
+import com.expectations.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +12,7 @@ import java.io.StringWriter;
 class Calculator {
 
      private Calculate cal;
-     private String expr;
+     private String expr = "";
      private CalculatorButton[] Buttons;
      private CalculatorFrame CalFrame;
      private JTextField CalTextField;
@@ -169,7 +167,10 @@ class Calculator {
 
              try{ this.cal.isExpressionCorrect(expr); }
 
-             catch (NeighbouringOperatorsExpectation | WrongBracketsInput e){
+             catch (NeighbouringOperatorsExpectation | WrongBracketsInput |
+                     EmptyExpressionExpectation | NotCorrectExpressionExpectation |
+                     WrongOperatorUsageExpectation | EmptyBracketExpectation |
+                     WrongFractionInputExpectation  e){
                  e.printStackTrace(printErr);
                  logGenerator.sendExpectationLog(Calculate.class.getName(), errors.toString());
                  CalTextField.setText(e.getMessage());
@@ -184,7 +185,6 @@ class Calculator {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
 
             if(ExpecFlag == 1){
                 ExpecFlag = 0;

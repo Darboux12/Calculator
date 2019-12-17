@@ -1,7 +1,6 @@
 package com;
 
-import com.expectations.NeighbouringOperatorsExpectation;
-import com.expectations.WrongBracketsInput;
+import com.expectations.*;
 import com.plugins.iPluginStructure;
 
 import java.io.File;
@@ -116,6 +115,14 @@ class Calculate {
         return false;
     }
 
+    private boolean isLeftBracket(String op){
+        return op.equals("(");
+    }
+
+    private boolean isRightBracket(String op){
+        return op.equals(")");
+    }
+
     private boolean hasPrecedence(String op1, String op2) {
 
         if (op2.equals("(")  || op2.equals(")"))
@@ -185,9 +192,7 @@ class Calculate {
             else if (isOperator(expr)) {
 
                 while (!ops.empty() && hasPrecedence(expr, ops.peek())){
-
-                    //ta
-
+                    
                     opPeek = ops.peek();
 
                     if(isTwoParamOperator(opPeek))
@@ -240,27 +245,82 @@ class Calculate {
     }
 
     void isExpressionCorrect(String expr) throws
-            NeighbouringOperatorsExpectation,WrongBracketsInput{
+            NeighbouringOperatorsExpectation,WrongBracketsInput,
+            EmptyExpressionExpectation,NotCorrectExpressionExpectation,
+            WrongOperatorUsageExpectation,EmptyBracketExpectation,
+            WrongFractionInputExpectation{
+
+        // Empty Expression
+        if(expr.equals(""))
+            throw new EmptyExpressionExpectation();
 
         String [] ExpElements = expr.split("\\s+");
 
+        if(ExpElements.length == 1)
+            throw new NotCorrectExpressionExpectation();
+
+        if(isOperator(ExpElements[ExpElements.length-1]))
+            throw new WrongOperatorUsageExpectation();
+
+        if(!isNumeric(ExpElements[ExpElements.length-1]) && !isRightBracket(ExpElements[ExpElements.length-1]))
+            throw new WrongOperatorUsageExpectation();
+
+
         for(int i=0; i<ExpElements.length-1; i++){
 
-
-
                 //Two Non-One-Param Operators side by side
-                 if(isOperator(ExpElements[i]) && isOperator(ExpElements[i+1]) &&
-                         (isOneParamOperator(ExpElements[i]) && !isOneParamOperator(ExpElements[i+1])) ||
-                         (!isOneParamOperator(ExpElements[i]) && isOneParamOperator(ExpElements[i+1])) ||
-                         (isTwoParamOperator(ExpElements[i]) && isTwoParamOperator(ExpElements[i+1])))
-                                 throw new NeighbouringOperatorsExpectation();
+                 if(isTwoParamOperator(ExpElements[i]) && isTwoParamOperator(ExpElements[i+1]))
+                        throw new NeighbouringOperatorsExpectation();
 
-                 // No numbers for two-param operator
+                if(isOneParamOperator(ExpElements[i]) && isTwoParamOperator(ExpElements[i+1]))
+                        throw new NeighbouringOperatorsExpectation();
 
-         /*   if(!isNumeric(ExpElements[i]) && !ExpElements[i].equals(")")  ){
-                throw new NeighbouringOperatorsExpectation();
+                // Wrong bracket order )(
+                if(isRightBracket(ExpElements[i]) && isLeftBracket(ExpElements[i+1]))
+                    throw new WrongBracketsInput();
 
-            } */
+                // Wrong bracket order )(
+                if(isLeftBracket(ExpElements[i]) && isRightBracket(ExpElements[i+1]))
+                    throw new EmptyBracketExpectation();
+
+                // No number for one-param operator
+                if(isOneParamOperator(ExpElements[i]) && !isNumeric((ExpElements[i+1])) &&
+                        !isLeftBracket(ExpElements[i+1]))
+                      throw new NeighbouringOperatorsExpectation();
+
+                // Wrong Fraction Input 0.   || .0
+
+            if(ExpElements[i].equals("."))
+                if(!(isNumeric(ExpElements[i-1]) && ExpElements[i].equals(".") && isNumeric(ExpElements[i+1])))
+                         throw new WrongFractionInputExpectation();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //  if(!isTwoParamOperator(ExpElements[i])&& isOneParamOperator(ExpElements[i+1])){
+             //   throw new NeighbouringOperatorsExpectation();}
+
+
+
+
 
 
 
@@ -272,9 +332,7 @@ class Calculate {
                         ExpElements[i].charAt(0) != ')' && ExpElements[i+1].charAt(0) != '(')
                              throw new NeighbouringOperatorsExpectation(); */
 
-                // Wrong bracket order )(
-                if(ExpElements[i].charAt(0) == ')' && ExpElements[i+1].charAt(0) == '(') {
-                    throw new WrongBracketsInput(); }
+
 
 
 
