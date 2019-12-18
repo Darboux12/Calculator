@@ -192,7 +192,7 @@ class Calculate {
             else if (isOperator(expr)) {
 
                 while (!ops.empty() && hasPrecedence(expr, ops.peek())){
-                    
+
                     opPeek = ops.peek();
 
                     if(isTwoParamOperator(opPeek))
